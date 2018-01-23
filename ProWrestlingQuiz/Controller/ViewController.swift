@@ -10,14 +10,34 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    
+    @IBOutlet weak var questionLabel: UILabel!
+    @IBOutlet weak var scoreLabel: UILabel!
+    @IBOutlet var progressBar: UIView!
+    @IBOutlet weak var progressLabel: UILabel!
+    
+    
+    @IBAction func actionPressed(_ sender: AnyObject) {
+    }
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
 
 
