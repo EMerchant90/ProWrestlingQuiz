@@ -42,7 +42,7 @@ class ViewController: UIViewController {
         
         questionNumber = questionNumber + 1
         
-        
+        nextQuestion()
     }
     
     func checkAnswer() {
@@ -72,13 +72,11 @@ class ViewController: UIViewController {
             
         } else {
             
-            let alert = UIAlertController(title: "Great!",
-                                          message: "You've finished all the questions, do you want to restart?", preferredStyle: .alert)
-            let restartAction = UIAlertAction(title: "Restart",
-                                              style: .default, handler: {
-                                                (UIAlertAction) in
-                                                self.startOver()
-                                                self.scoreLabel.text = "Score: \(0)"
+            let alert = UIAlertController(title: "Great!", message: "You've finished all the questions, do you want to restart?", preferredStyle: .alert)
+            let restartAction = UIAlertAction(title: "Restart", style: .default, handler:
+            { (UIAlertAction) in
+                self.startOver()
+                self.scoreLabel.text = "Score: \(0)"
             })
             
             alert.addAction(restartAction)
@@ -102,20 +100,6 @@ class ViewController: UIViewController {
         progressBar.frame.size.width = (view.frame.size.width) / 20 * CGFloat(questionNumber + 1)
         
     }
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-
-
 
 }
 
