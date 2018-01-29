@@ -50,7 +50,7 @@ class QuestionBank {
         
         list.append(Question(text: "Paul Heyman managed Steve Austin at one point in thier careers", correctAnswer: true))
         
-        list.append(Question(text: "2018 was the firs year of the Women's Royal Rumble", correctAnswer: true))
+        list.append(Question(text: "2018 was the first year of the Women's Royal Rumble", correctAnswer: true))
         
         list.append(Question(text: "Rey Mysterio always wore a mask", correctAnswer: false))
         
