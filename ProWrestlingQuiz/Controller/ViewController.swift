@@ -10,23 +10,22 @@ import UIKit
 
 class ViewController: UIViewController {
     
-    let allQuestions = QuestionBank()
-    var pickedAnswer: Bool = false
-    var questionNumber: Int = 0
-    var score: Int = 0
-
-    
     @IBOutlet weak var questionLabel: UILabel!
     @IBOutlet weak var scoreLabel: UILabel!
     @IBOutlet var progressBar: UIView!
     @IBOutlet weak var progressLabel: UILabel!
     
     
+    let allQuestions = QuestionBank()
+    var pickedAnswer: Bool = false
+    var questionNumber: Int = 0
+    var score: Int = 0
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let firstQuestion = allQuestions.list[0]
-        questionLabel.text = firstQuestion.questionText
+        updateUI()
         
     }
     
@@ -42,7 +41,7 @@ class ViewController: UIViewController {
         
         questionNumber = questionNumber + 1
         
-        nextQuestion()
+        updateUI()
     }
     
     func checkAnswer() {
@@ -51,7 +50,7 @@ class ViewController: UIViewController {
         
         if correctAnswer == pickedAnswer {
             
-            score += 1
+            score = score + 1
 
         } else {
             
@@ -67,16 +66,13 @@ class ViewController: UIViewController {
             
         questionLabel.text = allQuestions.list[questionNumber].questionText
             
-        updateUI()
-            
-            
         } else {
             
             let alert = UIAlertController(title: "Great!", message: "You've finished all the questions, do you want to restart?", preferredStyle: .alert)
+            
             let restartAction = UIAlertAction(title: "Restart", style: .default, handler:
-            { (UIAlertAction) in
+            { UIAlertAction in
                 self.startOver()
-                self.scoreLabel.text = "Score: \(0)"
             })
             
             alert.addAction(restartAction)
@@ -86,19 +82,19 @@ class ViewController: UIViewController {
     }
     
     
+    func updateUI() {
+        progressBar.frame.size.width = (view.frame.size.width / 20) * CGFloat(questionNumber)
+        progressLabel.text = String(questionNumber) + "/20"
+        scoreLabel.text = "Score: " + String(score)
+        nextQuestion()
+        
+    }
+    
     func startOver() {
         
         questionNumber = 0
-        nextQuestion()
         score = 0
-    }
-    
-    func updateUI() {
-        
-        scoreLabel.text = "Score: \(score)"
-        progressLabel.text = "\(questionNumber + 1) / 20"
-        progressBar.frame.size.width = (view.frame.size.width) / 20 * CGFloat(questionNumber + 1)
-        
+        updateUI()
     }
 
 }

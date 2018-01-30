@@ -48,6 +48,10 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1rd-Ef-p0f" userLabel="ProgressBar">
                                         <rect key="frame" x="0.0" y="33" width="24" height="14"/>
                                         <color key="backgroundColor" red="0.016804177310000001" green="0.19835099580000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="14" id="Hrk-IU-AlO"/>
+                                            <constraint firstAttribute="width" constant="24" id="Hw3-Pd-94S"/>
+                                        </constraints>
                                     </view>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="x/20" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XsD-S6-GyU">
                                         <rect key="frame" x="8" y="0.0" width="35" height="21"/>
@@ -73,13 +77,11 @@
                                 <constraints>
                                     <constraint firstAttribute="trailing" secondItem="53c-Du-fQs" secondAttribute="trailing" id="3JR-LA-ZaO"/>
                                     <constraint firstItem="XsD-S6-GyU" firstAttribute="top" secondItem="De8-yR-C8y" secondAttribute="top" id="4B6-Sn-lph"/>
-                                    <constraint firstAttribute="trailing" secondItem="1rd-Ef-p0f" secondAttribute="trailing" constant="351" id="D6z-mE-z3z"/>
-                                    <constraint firstItem="1rd-Ef-p0f" firstAttribute="leading" secondItem="De8-yR-C8y" secondAttribute="leading" id="Rz2-cx-FI6"/>
                                     <constraint firstItem="XsD-S6-GyU" firstAttribute="leading" secondItem="De8-yR-C8y" secondAttribute="leading" constant="8" id="SDl-5g-diH"/>
                                     <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="XsD-S6-GyU" secondAttribute="trailing" constant="20" symbolic="YES" id="Uov-9G-gES"/>
                                     <constraint firstItem="53c-Du-fQs" firstAttribute="top" secondItem="De8-yR-C8y" secondAttribute="top" id="hpT-cj-LYh"/>
+                                    <constraint firstItem="1rd-Ef-p0f" firstAttribute="leading" secondItem="De8-yR-C8y" secondAttribute="leading" id="ku8-Yb-onQ"/>
                                     <constraint firstItem="53c-Du-fQs" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="De8-yR-C8y" secondAttribute="leading" constant="20" symbolic="YES" id="m8M-VA-QGa"/>
-                                    <constraint firstItem="1rd-Ef-p0f" firstAttribute="top" secondItem="XsD-S6-GyU" secondAttribute="bottom" constant="12" id="mMk-0G-8St"/>
                                     <constraint firstAttribute="height" constant="47" id="pp1-KQ-aMx"/>
                                     <constraint firstAttribute="bottom" secondItem="1rd-Ef-p0f" secondAttribute="bottom" id="zRZ-ty-Vz8"/>
                                 </constraints>
