@@ -46,11 +46,11 @@
                                 <rect key="frame" x="0.0" y="620" width="375" height="47"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1rd-Ef-p0f" userLabel="ProgressBar">
-                                        <rect key="frame" x="0.0" y="33" width="24" height="14"/>
+                                        <rect key="frame" x="0.0" y="33" width="0.0" height="14"/>
                                         <color key="backgroundColor" red="0.016804177310000001" green="0.19835099580000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="14" id="Hrk-IU-AlO"/>
-                                            <constraint firstAttribute="width" constant="24" id="Hw3-Pd-94S"/>
+                                            <constraint firstAttribute="width" id="Hw3-Pd-94S"/>
                                         </constraints>
                                     </view>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="x/20" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XsD-S6-GyU">
@@ -146,6 +146,7 @@
                     </view>
                     <connections>
                         <outlet property="progressBar" destination="1rd-Ef-p0f" id="bS5-Lc-VHE"/>
+                        <outlet property="progressBarWidthConstraint" destination="Hw3-Pd-94S" id="Q80-2n-gr8"/>
                         <outlet property="progressLabel" destination="XsD-S6-GyU" id="eMC-lS-N1B"/>
                         <outlet property="questionLabel" destination="pnp-7I-vbR" id="F3V-9k-fCc"/>
                         <outlet property="scoreLabel" destination="53c-Du-fQs" id="ico-oe-gig"/>

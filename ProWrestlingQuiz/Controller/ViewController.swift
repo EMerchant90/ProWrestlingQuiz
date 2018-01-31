@@ -14,7 +14,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var scoreLabel: UILabel!
     @IBOutlet var progressBar: UIView!
     @IBOutlet weak var progressLabel: UILabel!
-    
+    @IBOutlet weak var progressBarWidthConstraint: NSLayoutConstraint!
     
     let allQuestions = QuestionBank()
     var pickedAnswer: Bool = false
@@ -51,7 +51,7 @@ class ViewController: UIViewController {
         if correctAnswer == pickedAnswer {
             
             score = score + 1
-
+            
         } else {
             
             print("Wrong!")
@@ -64,7 +64,7 @@ class ViewController: UIViewController {
     func nextQuestion() {
         if questionNumber <= 19 {
             
-        questionLabel.text = allQuestions.list[questionNumber].questionText
+            questionLabel.text = allQuestions.list[questionNumber].questionText
             
         } else {
             
@@ -83,7 +83,12 @@ class ViewController: UIViewController {
     
     
     func updateUI() {
-        progressBar.frame.size.width = (view.frame.size.width / 20) * CGFloat(questionNumber)
+        let progressBarChunk = (view.frame.size.width / 20)
+        let progressBarWidth = progressBarChunk * CGFloat(questionNumber)
+        UIView.animate(withDuration: 0.15) {
+            self.progressBarWidthConstraint.constant = progressBarWidth
+            self.view.layoutIfNeeded()
+        }
         progressLabel.text = String(questionNumber) + "/20"
         scoreLabel.text = "Score: " + String(score)
         nextQuestion()
@@ -96,6 +101,6 @@ class ViewController: UIViewController {
         score = 0
         updateUI()
     }
-
+    
 }
 
